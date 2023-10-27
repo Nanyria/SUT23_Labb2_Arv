@@ -23,7 +23,7 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n CAT\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}\nLong or shorthaired: {4}", _name, _age, _diet, _color, _furrLength);
+            Console.WriteLine("\n CAT\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}", _name, _age, _diet, _color);
             if(_ifWild)
             {
                 Console.WriteLine("This cat is wild.");

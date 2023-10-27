@@ -33,11 +33,25 @@ namespace SUT23_Labb2_Arv
         }
         public override void Hunting()
         {
-
+            if (_ifWild)
+            {
+                Console.WriteLine("Wild dogs hund smaller pray, the pray itself differs depending on what breed of dog it is.");
+            }
+            else
+            {
+                Console.WriteLine("While tame dogs do not need to hunt, many species are used as a help for hunters.");
+            }
         }
         public void Training()
         {
-
+            if (_ifWild)
+            {
+                Console.WriteLine("It is not recommended to train wild dogs. Since they are wild.");
+            }
+            else
+            {
+                Console.WriteLine("For tame dogs, training is crucial, \nit is recommended to start training obedience and leash-training while they're still pups.");
+            }
         }
     }
 }
