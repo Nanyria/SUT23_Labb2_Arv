@@ -8,13 +8,18 @@
         public string _color;
         public bool _ifWild;
 
-        public Animal(string Name, int Age, string Diet, string Color, bool IfWild)
+        public Animal() : this("No name provided", 00, "No info", "No info")
+        {
+
+        }
+
+        public Animal(string Name, int Age, string Diet, string Color)
         {
             _name = Name;
             _age = Age;
             _diet = Diet;
             _color = Color;
-            _ifWild = IfWild;
+        
         }
 
         public virtual void makeSound()

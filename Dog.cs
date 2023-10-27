@@ -11,8 +11,13 @@ namespace SUT23_Labb2_Arv
     {
         public string _breed;
 
-        public Dog(string Name, int Age, string Diet, string Color, bool ifWild, string Breed) : base(Name, Age, Diet, Color, ifWild)
+        public Dog() : this("No name provided", 00, "No info", "No info", false, "No info")
         {
+
+        }
+        public Dog(string Name, int Age, string Diet, string Color, bool ifWild, string Breed) : base(Name, Age, Diet, Color)
+        {
+            _ifWild = ifWild;
             _breed = Breed;
         }
         public override void makeSound()

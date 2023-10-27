@@ -13,8 +13,13 @@ namespace SUT23_Labb2_Arv
     {
         public bool _ifLonghaired;
 
-        public Cat(string Name, int Age, string Diet, string Color, bool ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color, ifWild)
+        public Cat() : this("No name provided", 00, "No info", "No info", false, false)
         {
+
+        }
+        public Cat(string Name, int Age, string Diet, string Color, bool ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color)
+        {
+            _ifWild = ifWild;
             _ifLonghaired = IfLongHaired;
         }
         public override void makeSound()

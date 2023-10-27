@@ -10,19 +10,24 @@ namespace SUT23_Labb2_Arv
 {
     internal class Dragon : Animal
     {
-        public int _numberofLegs;
+        public int _numberofSightings;
 
-        public Dragon(string Name, int Age, string Diet, string Color, bool ifWild, int NumberOfLegs) : base(Name, Age, Diet, Color, ifWild)
+        public Dragon() : this("No name provided", 00, "No info", "No info", 00)
         {
-            _numberofLegs = NumberOfLegs;
+
+        }
+        public Dragon(string Name, int Age, string Diet, string Color, int NumberOfSightings) : base(Name, Age, Diet, Color)
+        {
+            _numberofSightings = NumberOfSightings;
+            _ifWild = true;
         }
         public override void makeSound()
         {
-            Console.WriteLine("The sound dragons make has not been recorded since there have been no survivors to tell the tale.");
+            Console.WriteLine("The sound dragons make differs depending of type of dragon.\nSome dragons are even capable of communicating with humans.");
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n DRAGON\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}\nNumber of legs: {4}", _name, _age, _diet, _color, _numberofLegs);
+            Console.WriteLine("\n DRAGON\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}\nNumber of legs: {4}\nAll dragons are wild.", _name, _age, _diet, _color, _numberofSightings);
             _ifWild = true;
         }
         public override void Hunting()
@@ -31,7 +36,7 @@ namespace SUT23_Labb2_Arv
         }
         public void DragonWyvern()
         {
-            if(_numberofLegs == 2)
+            if(_numberofSightings == 2)
             {
                 
             }
@@ -41,13 +46,17 @@ namespace SUT23_Labb2_Arv
     }
     internal class Wyvern : Dragon
     {
-        public string _firebreather;
+        public string _colorOfFire;
 
-        public Wyvern(string Name, int Age, string Description, string Diet, string TypeOfAnimal, bool ifWild, int NumberOfLegs, string Firebreather) : base(Name, Age, Diet, TypeOfAnimal, ifWild, NumberOfLegs)
+        public Wyvern(string Name, int Age, string Diet, string Color, int NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, NumberOfSightings)
         {
-            _firebreather = Firebreather;
+            _colorOfFire = ColorOfFire;
 
-
+        }
+        public override void AnimalInfo()
+        {
+            base.AnimalInfo();
+            Console.WriteLine("Wyverns breathe fire, the color of this Wyvern's fire is {0}.", _colorOfFire);
         }
         public override void Hunting()
         {
@@ -57,10 +66,23 @@ namespace SUT23_Labb2_Arv
     }
     internal class WesternDragon : Dragon
     {
-        public string _poisonous;
-        public WesternDragon(string Name, int Age, string Description, string Diet, string TypeOfAnimal, bool ifWild, int NumberOfLegs, string Poisonous) : base(Name, Age, Diet, TypeOfAnimal, ifWild, NumberOfLegs)
+        public bool _humanSpeach;
+        public WesternDragon(string Name, int Age, string Diet, string Color, int NumberOfSightings, bool HumanSpeach) : base(Name, Age, Diet, Color, NumberOfSightings)
         {
-            _poisonous = Poisonous;
+            _humanSpeach = HumanSpeach;
+        }
+        public override void AnimalInfo()
+        {
+            base.AnimalInfo();
+            if (_humanSpeach)
+            {
+                Console.WriteLine("This dragon is capable of communicating with humans.");
+            }
+            else
+            {
+                Console.WriteLine("This dragon is not capable of communicating with humans.");
+            }
+
         }
         public override void Hunting()
         {
