@@ -11,11 +11,11 @@ namespace SUT23_Labb2_Arv
 {
     internal class Cat : Animal
     {
-        public string _furrLength;
+        public bool _ifLonghaired;
 
-        public Cat(string Name, int Age, string Diet, string Color, bool ifWild, string FurrLength) : base(Name, Age, Diet, Color, ifWild)
+        public Cat(string Name, int Age, string Diet, string Color, bool ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color, ifWild)
         {
-            _furrLength = FurrLength;
+            _ifLonghaired = IfLongHaired;
         }
         public override void makeSound()
         {
@@ -46,7 +46,14 @@ namespace SUT23_Labb2_Arv
         }
         public void Fur()
         {
-
+            if( _ifLonghaired) 
+            {
+                Console.WriteLine("Cats with longer furr require help with grooming as to avoid tangles and an excess of hairballs.");
+            }
+            else
+            {
+                Console.WriteLine("Cats with shorter furr manage their furr themselves for the most part, \nbut may need help grooming while shedding.");
+            }
         }
     }
 }
