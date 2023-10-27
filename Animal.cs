@@ -1,28 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SUT23_Labb2_Arv
+﻿namespace SUT23_Labb2_Arv
 {
     internal class Animal
     {
         public string _name;
         public int _age;
-        public string _description;
         public string _diet;
-        public string _typeOfAnimal;
+        public string _color;
         public bool _ifWild;
 
-        public Animal(string Name, int Age, string Description, string Diet, string TypeOfAnimal, bool ifWild)
+        public Animal(string Name, int Age, string Diet, string Color, bool IfWild)
         {
             _name = Name;
             _age = Age;
-            _description = Description;
             _diet = Diet;
-            _typeOfAnimal = TypeOfAnimal;
-            _ifWild = ifWild;
+            _color = Color;
+            _ifWild = IfWild;
         }
 
         public virtual void makeSound()
