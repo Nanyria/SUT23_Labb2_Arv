@@ -10,13 +10,13 @@ namespace SUT23_Labb2_Arv
 {
     internal class Dragon : Animal
     {
-        public int _numberofSightings;
+        public int? _numberofSightings;
 
-        public Dragon() : this("No name provided", 00, "No info", "No info", "No info", 00)
+        public Dragon() : this("No name provided", 00, "No info", "No info", "No info", null)
         {
 
         }
-        public Dragon(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings) : base(Name, Age, Diet, Color, Location)
+        public Dragon(string Name, int Age, string Diet, string Color, string Location, int? NumberOfSightings) : base(Name, Age, Diet, Color, Location)
         {
             _numberofSightings = NumberOfSightings;
             _ifWild = true;
@@ -37,22 +37,23 @@ namespace SUT23_Labb2_Arv
         }
         public void Probability()
         {
-            if (_numberofSightings <= 10)
+
+            if (!_numberofSightings.HasValue)
+            {
+                Console.WriteLine("There's not enough info provided to predict the probability of meeting this dragon.");
+            }
+            else if (_numberofSightings.Value <= 10)
             {
                 Console.WriteLine("The probabillity of meeting this dragon is low.");
             }
-            else if (_numberofSightings >= 10 && _numberofSightings < 40)
+            else if (_numberofSightings.Value >= 10 && _numberofSightings.Value < 40)
             {
                 Console.WriteLine("The probabillity of meeting this dragon is medium.");
             }
-            else if (_numberofSightings >= 40)
+            else if (_numberofSightings.Value >= 40)
             {
 
                 Console.WriteLine("The probabillity of meeting this dragon is high.");
-            }
-            else
-            {
-                Console.WriteLine("There's not enough info providet to predict the probability of meeting this dragon.");
             }
 
         }
@@ -62,11 +63,11 @@ namespace SUT23_Labb2_Arv
     {
         public string _colorOfFire;
 
-        public Wyvern() : this("No name provided", 00, "No info", "No info", "No info", 00, "unknown")
+        public Wyvern() : this("No name provided", 00, "No info", "No info", "No info", null, "unknown")
         {
 
         }
-        public Wyvern(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
+        public Wyvern(string Name, int Age, string Diet, string Color, string Location, int? NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
         {
             _colorOfFire = ColorOfFire;
 
@@ -86,11 +87,11 @@ namespace SUT23_Labb2_Arv
     internal class WesternDragon : Dragon
     {
         public bool? _humanSpeach;
-        public WesternDragon() : this("No name provided", 00, "No info", "No info", "No info", 00, null)
+        public WesternDragon() : this("No name provided", 00, "No info", "No info", "No info", null, null)
         {
 
         }
-        public WesternDragon(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings, bool? HumanSpeach) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
+        public WesternDragon(string Name, int Age, string Diet, string Color, string Location, int? NumberOfSightings, bool? HumanSpeach) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
         {
             _humanSpeach = HumanSpeach;
         }
