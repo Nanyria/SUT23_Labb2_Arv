@@ -13,11 +13,11 @@ namespace SUT23_Labb2_Arv
     {
         public bool _ifLonghaired;
 
-        public Cat() : this("No name provided", 00, "No info", "No info", false, false)
+        public Cat() : this("No name provided", 00, "No info", "No info", null, false)
         {
 
         }
-        public Cat(string Name, int Age, string Diet, string Color, bool ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color)
+        public Cat(string Name, int Age, string Diet, string Color, bool? ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color)
         {
             _ifWild = ifWild;
             _ifLonghaired = IfLongHaired;
@@ -29,24 +29,39 @@ namespace SUT23_Labb2_Arv
         public override void AnimalInfo()
         {
             Console.WriteLine("\n CAT\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}", _name, _age, _diet, _color);
-            if(_ifWild)
+            if (_ifWild.HasValue)
             {
-                Console.WriteLine("This cat is wild.");
+                if (_ifWild.Value)
+                {
+                    Console.WriteLine("This cat is wild.");
+                }
+                else
+                {
+                    Console.WriteLine("This cat is tame.");
+                }
             }
             else
             {
-                Console.WriteLine("This cat is tame.");
+                Console.WriteLine("This cat has not been specified as wild or tame");
             }
         }
+
         public override void Hunting()
         {
-            if(_ifWild)
+            if (_ifWild.HasValue)
             {
-                Console.WriteLine("Wild cats hunt smaller pray, for example rats, mice and birds.");
+                if (_ifWild.Value)
+                {
+                    Console.WriteLine("Wild cats hunt smaller pray, for example rats, mice and birds.");
+                }
+                else
+                {
+                    Console.WriteLine("While tame cats usually do not need to hunt, \nthey relish the opportunity and will often provide their owners with 'gifts' such as dead mice or birds.");
+                }
             }
             else
             {
-                Console.WriteLine("While tame cats usually do not need to hunt, \nthey relish the opportunity and will often provide their owners with 'gifts' such as dead mice or birds.");
+                Console.WriteLine("This cat has not been specified as wild or tame");
             }
         }
         public void Fur()

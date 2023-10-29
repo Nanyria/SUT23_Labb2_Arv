@@ -48,6 +48,10 @@ namespace SUT23_Labb2_Arv
     {
         public string _colorOfFire;
 
+        public Wyvern() : this("No name provided", 00, "No info", "No info", 00, "No info")
+        {
+
+        }
         public Wyvern(string Name, int Age, string Diet, string Color, int NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, NumberOfSightings)
         {
             _colorOfFire = ColorOfFire;
@@ -66,21 +70,32 @@ namespace SUT23_Labb2_Arv
     }
     internal class WesternDragon : Dragon
     {
-        public bool _humanSpeach;
-        public WesternDragon(string Name, int Age, string Diet, string Color, int NumberOfSightings, bool HumanSpeach) : base(Name, Age, Diet, Color, NumberOfSightings)
+        public bool? _humanSpeach;
+        public WesternDragon() : this("No name provided", 00, "No info", "No info", 00, null)
+        {
+
+        }
+        public WesternDragon(string Name, int Age, string Diet, string Color, int NumberOfSightings, bool? HumanSpeach) : base(Name, Age, Diet, Color, NumberOfSightings)
         {
             _humanSpeach = HumanSpeach;
         }
         public override void AnimalInfo()
         {
             base.AnimalInfo();
-            if (_humanSpeach)
+            if (_humanSpeach.HasValue)
             {
-                Console.WriteLine("This dragon is capable of communicating with humans.");
+                if (_humanSpeach.Value)
+                {
+                    Console.WriteLine("This dragon is capable of communicating with humans.");
+                }
+                else
+                {
+                    Console.WriteLine("This dragon is not capable of communicating with humans.");
+                }
             }
             else
             {
-                Console.WriteLine("This dragon is not capable of communicating with humans.");
+                Console.WriteLine("The ability to communicate with humans is unknown for this dragon.");
             }
 
         }

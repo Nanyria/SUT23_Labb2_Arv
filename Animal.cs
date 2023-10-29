@@ -6,7 +6,7 @@
         public int _age;
         public string _diet;
         public string _color;
-        public bool _ifWild;
+        public bool? _ifWild;
 
         public Animal() : this("No name provided", 00, "No info", "No info")
         {
