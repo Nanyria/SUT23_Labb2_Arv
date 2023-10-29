@@ -61,7 +61,7 @@ namespace SUT23_Labb2_Arv
             }
             else
             {
-                Console.WriteLine("This cat has not been specified as wild or tame");
+                Console.WriteLine("This cat has not been specified as wild or tame, as such there is not enough information to provide hunting info.");
             }
         }
         public void Fur()
