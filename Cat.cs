@@ -13,11 +13,11 @@ namespace SUT23_Labb2_Arv
     {
         public bool _ifLonghaired;
 
-        public Cat() : this("No name provided", 00, "No info", "No info", null, false)
+        public Cat() : this("No name provided", 00, "No info", "No info", "No info", null, false)
         {
 
         }
-        public Cat(string Name, int Age, string Diet, string Color, bool? ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color)
+        public Cat(string Name, int Age, string Diet, string Color, string Location, bool? ifWild, bool IfLongHaired) : base(Name, Age, Diet, Color, Location)
         {
             _ifWild = ifWild;
             _ifLonghaired = IfLongHaired;
@@ -28,7 +28,7 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n CAT\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}", _name, _age, _diet, _color);
+            Console.WriteLine("\n CAT\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}\nLocation: {4}", _name, _age, _diet, _color, _location);
             if (_ifWild.HasValue)
             {
                 if (_ifWild.Value)

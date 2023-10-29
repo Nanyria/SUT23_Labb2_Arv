@@ -12,11 +12,11 @@ namespace SUT23_Labb2_Arv
     {
         public int _numberofSightings;
 
-        public Dragon() : this("No name provided", 00, "No info", "No info", 00)
+        public Dragon() : this("No name provided", 00, "No info", "No info", "No info", 00)
         {
 
         }
-        public Dragon(string Name, int Age, string Diet, string Color, int NumberOfSightings) : base(Name, Age, Diet, Color)
+        public Dragon(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings) : base(Name, Age, Diet, Color, Location)
         {
             _numberofSightings = NumberOfSightings;
             _ifWild = true;
@@ -27,7 +27,7 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n DRAGON\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}\nNumber of sightings: {4}\nAll dragons are wild.", _name, _age, _diet, _color, _numberofSightings);
+            Console.WriteLine("\n DRAGON\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}\nLocation: {4}\nNumber of sightings: {5}\nAll dragons are wild.", _name, _age, _diet, _color, _location, _numberofSightings);
             _ifWild = true;
             Probability();
         }
@@ -62,11 +62,11 @@ namespace SUT23_Labb2_Arv
     {
         public string _colorOfFire;
 
-        public Wyvern() : this("No name provided", 00, "No info", "No info", 00, "unknown")
+        public Wyvern() : this("No name provided", 00, "No info", "No info", "No info", 00, "unknown")
         {
 
         }
-        public Wyvern(string Name, int Age, string Diet, string Color, int NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, NumberOfSightings)
+        public Wyvern(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings, string ColorOfFire) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
         {
             _colorOfFire = ColorOfFire;
 
@@ -86,11 +86,11 @@ namespace SUT23_Labb2_Arv
     internal class WesternDragon : Dragon
     {
         public bool? _humanSpeach;
-        public WesternDragon() : this("No name provided", 00, "No info", "No info", 00, null)
+        public WesternDragon() : this("No name provided", 00, "No info", "No info", "No info", 00, null)
         {
 
         }
-        public WesternDragon(string Name, int Age, string Diet, string Color, int NumberOfSightings, bool? HumanSpeach) : base(Name, Age, Diet, Color, NumberOfSightings)
+        public WesternDragon(string Name, int Age, string Diet, string Color, string Location, int NumberOfSightings, bool? HumanSpeach) : base(Name, Age, Diet, Color, Location, NumberOfSightings)
         {
             _humanSpeach = HumanSpeach;
         }
