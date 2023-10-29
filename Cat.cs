@@ -28,7 +28,7 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n CAT\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}", _name, _age, _diet, _color);
+            Console.WriteLine("\n CAT\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}", _name, _age, _diet, _color);
             if (_ifWild.HasValue)
             {
                 if (_ifWild.Value)
@@ -44,6 +44,7 @@ namespace SUT23_Labb2_Arv
             {
                 Console.WriteLine("This cat has not been specified as wild or tame");
             }
+            Fur();
         }
 
         public override void Hunting()

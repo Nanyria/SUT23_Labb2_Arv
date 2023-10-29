@@ -26,7 +26,7 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n DOG\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}\nBreed: {4}", _name, _age, _diet, _color, _breed);
+            Console.WriteLine("\n DOG\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}\nBreed: {4}", _name, _age, _diet, _color, _breed);
             if (_ifWild.HasValue)
             {
                 if (_ifWild.Value)
@@ -42,6 +42,7 @@ namespace SUT23_Labb2_Arv
             {
                 Console.WriteLine("This dog has not been specified as wild or tame");
             }
+            Training();
         }
         public override void Hunting()
         {

@@ -27,18 +27,32 @@ namespace SUT23_Labb2_Arv
         }
         public override void AnimalInfo()
         {
-            Console.WriteLine("\n DRAGON\nName: {0}. \nAge:{1}.\nPreferred diet: {2}.\nColor: {3}\nNumber of legs: {4}\nAll dragons are wild.", _name, _age, _diet, _color, _numberofSightings);
+            Console.WriteLine("\n DRAGON\nName: {0}. \nAge: {1}.\nPreferred diet: {2}.\nColor: {3}\nNumber of sightings: {4}\nAll dragons are wild.", _name, _age, _diet, _color, _numberofSightings);
             _ifWild = true;
+            Probability();
         }
         public override void Hunting()
         {
             Console.WriteLine("Dragons generally hunt by attacking their pray from the air.");
         }
-        public void DragonWyvern()
+        public void Probability()
         {
-            if(_numberofSightings == 2)
+            if (_numberofSightings <= 10)
             {
-                
+                Console.WriteLine("The probabillity of meeting this dragon is low.");
+            }
+            else if (_numberofSightings >= 10 && _numberofSightings < 40)
+            {
+                Console.WriteLine("The probabillity of meeting this dragon is medium.");
+            }
+            else if (_numberofSightings >= 40)
+            {
+
+                Console.WriteLine("The probabillity of meeting this dragon is high.");
+            }
+            else
+            {
+                Console.WriteLine("There's not enough info providet to predict the probability of meeting this dragon.");
             }
 
         }
@@ -48,7 +62,7 @@ namespace SUT23_Labb2_Arv
     {
         public string _colorOfFire;
 
-        public Wyvern() : this("No name provided", 00, "No info", "No info", 00, "No info")
+        public Wyvern() : this("No name provided", 00, "No info", "No info", 00, "unknown")
         {
 
         }
@@ -66,6 +80,7 @@ namespace SUT23_Labb2_Arv
         {
             Console.WriteLine("Wyverns hunt by attacking their pray from the air, scorching them to death and then devours the charred remains");
         }
+
 
     }
     internal class WesternDragon : Dragon
@@ -102,6 +117,10 @@ namespace SUT23_Labb2_Arv
         public override void Hunting()
         {
             Console.WriteLine("Western dragons hunt by attacking their pray from the air, blasting them with acid and then gulping up the sloshed remains.");
+        }
+        public override void makeSound()
+        {
+            Console.WriteLine("The sound dragons make differs depending of type of dragon.");
         }
     }
 
